@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.acompe.mapper.GithubMapper">
+
+    <select id="findByGitHubId" resultType="GitHub">
+        select * from github where git_hub_id = #{gitHubId}
+    </select>
+
+    <select id="findByUserId" resultType="GitHub">
+        select * from github where user_id = #{userId}
+    </select>
+
+    <insert id="addGitHub" parameterType="GitHub" useGeneratedKeys="true" keyProperty="id">
+        insert into github(git_hub_id, user_id, name, avatar_url)
+        value (#{gitHubId},#{userId},#{name},#{avatarUrl})
+    </insert>
+
+</mapper>

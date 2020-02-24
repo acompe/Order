@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="js/jQuery.js"></script>
+</head>
+<body>
+<button onclick="href()">登录</button>
+<div th:text="${session}">
+
+</div>
+<script>
+    function href(){
+        window.open('http://www.acompe.com/oauth2/authorization/github', 'newwindow', 'height=500, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no')
+        window.addEventListener('message', function (e) {
+            alert(e.data)
+        })
+    }
+</script>
+</body>
+</html>

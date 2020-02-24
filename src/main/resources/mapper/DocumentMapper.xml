@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.acompe.mapper.DocumentMapper">
+
+    <select id="findByParentId" resultType="Document">
+        select * from document where parentId = #{parentId}
+    </select>
+
+    <update id="updateDocument">
+        update document set content = #{content} where parentId = #{parentId}
+    </update>
+
+    <insert id="addDocument" parameterType="Document" useGeneratedKeys="true" keyProperty="id">
+        insert into document(parentId,content) value (#{parentId},#{content})
+    </insert>
+
+</mapper>

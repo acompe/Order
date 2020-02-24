@@ -1,0 +1,29 @@
+server:
+  port: 80
+  max-http-header-size: 8192
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: bbe275120cd9276e8799
+            client-secret: 4b6e7cd7ec464c1b16ef856c71c15edc76d3484b
+            authorization-grant-type: authorization_code
+  datasource:
+    username: root
+    password: wanzhy123
+    url: jdbc:mysql://152.136.68.20:3306/acompe?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.acompe.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
+jwt:
+  expiration: 1296000000
+  secret: acompe
+  header: token

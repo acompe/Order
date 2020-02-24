@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.acompe.mapper.ModularMapper">
+
+    <select id="findAll" resultType="Modular">
+        select * from modular
+    </select>
+
+    <insert id="addModular" parameterType="Modular" useGeneratedKeys="true" keyProperty="id">
+        insert into modular(name ,description) value (#{name} ,#{description})
+    </insert>
+
+    <delete id="delModular">
+        delete from modular where id = #{id}
+    </delete>
+
+    <update id="updateStructure" >
+        update modular set structure = #{structure} where id = #{id}
+    </update>
+</mapper>
